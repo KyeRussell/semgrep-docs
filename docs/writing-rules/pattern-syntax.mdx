@@ -172,7 +172,7 @@ The `...` ellipsis operator matches everything in its current scope. The current
   height="432"
 ></iframe>
 
-Semgrep matches the first occurrence of `bar` and `baz` in the test code as these objects fall under the scope of `foo` and `...`. The ellipsis operator does not match the second occurrence of `bar` and `baz` as they are not inside of the function definition, therefore these objects in their second occurrence are not inside the scope of the ellipsis operator.
+Semgrep matches the first occurrence of `bar` in the test code as this object falls under the scope of `foo` and `...`. The ellipsis operator does not match the second occurrence of `bar` or the first occurrence of `baz` as they are not inside of the function definition, and are therefore not inside the scope of the ellipsis operator.
 
 ### Strings
 
@@ -279,7 +279,7 @@ Half or partial statements can't be matches; both of the examples above must spe
 ### Matching single items with an ellipsis
 
 Ellipsis `...` is generally used to match sequences of similar elements.
-However, you can also match single item using ellipsis `...` operator.
+However, you can also match a single item using ellipsis `...` operator.
 The following pattern is valid in languages with a C-like
 syntax even though `...` matches a single Boolean value rather
 than a sequence:
